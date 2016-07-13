@@ -2,12 +2,12 @@
 var express = require('express');  
 var app = express();  
 var port = process.env.port || 8300;
-var message = '\n Welcome to TwitterBot \n';
+
 
 
 //twitter dependencies
-var twit = new twitter({  
 var twitter = require('twitter');  
+var twit = new twitter({  
   consumer_key: '',
   consumer_secret: '',
   access_token_key: '',
@@ -60,7 +60,7 @@ var replyToMentions = function(){
     //responseTweet is the string we will send to twitter to tweet for us
     var responseTweet = '@';
     responseTweet += currentMention.user;
-    responseTweet += message;
+    responseTweet += '\n F O D A S \n';
 	console.log(currentMention.user);
     //twit will now post this responseTweet to twitter. This function takes a string and a callback
 	twit.post('statuses/update', {status: responseTweet},  function(error, tweet, response){

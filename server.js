@@ -2,7 +2,7 @@
 var express = require('express');  
 var app = express();  
 var port = process.env.port || 8300;
-
+var message = "\n Hello and Welcome to Twitter Bot \n";
 
 
 //twitter dependencies
@@ -60,7 +60,7 @@ var replyToMentions = function(){
     //responseTweet is the string we will send to twitter to tweet for us
     var responseTweet = '@';
     responseTweet += currentMention.user;
-    responseTweet += '\n F O D A S \n';
+    responseTweet += message;
 	console.log(currentMention.user);
     //twit will now post this responseTweet to twitter. This function takes a string and a callback
 	twit.post('statuses/update', {status: responseTweet},  function(error, tweet, response){
